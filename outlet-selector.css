@@ -216,13 +216,11 @@ body{
   color: rgba(255,255,255,0.55);
 }
 
-/* Mobile tuning */
 @media (max-width: 420px){
   :root{
-    --pillH: 42px;
-    --pillPadX: 16px;
-    --orbitW: 88vw;
-    --orbitH: 70vh;
+    --pillH: 40px;      /* a touch tighter */
+    --pillPadX: 14px;
+    --orbitW: 86vw;
+    --orbitH: 68vh;
   }
-  .brand-logo{ width: 108px; }
 }
