@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>5 Spice — Select Nearest Outlet</title>
+
+  <link rel="stylesheet" href="outlet-selector.css" />
+</head>
+
+<body>
+  <!-- Outlet Selector Screen -->
+  <main class="screen" id="screen">
+    <!-- Header -->
+    <header class="screen-header">
+      <p class="screen-title">Select Nearest Outlet</p>
+    </header>
+
+    <!-- Center stage (logo + orbit) -->
+    <section class="stage" aria-label="Outlet selection">
+      <!-- Center Logo -->
+      <div class="center" aria-hidden="false">
+        <img
+          class="brand-logo"
+          src="assets/logo-5spice.png"
+          alt="5 Spice"
+          draggable="false"
+        />
+      </div>
+
+      <!-- Orbit container (buttons injected by JS) -->
+      <div class="orbit" id="orbit" role="list" aria-label="Outlets"></div>
+    </section>
+
+    <!-- Footer CTA -->
+    <footer class="screen-footer">
+      <button class="cta" id="btnOrder" disabled>
+        Online Order
+      </button>
+      <p class="hint" id="hintText">Choose an outlet to continue</p>
+    </footer>
+  </main>
+
+  <script src="outlets.js"></script>
+  <script src="outlet-selector.js"></script>
+</body>
+</html>
