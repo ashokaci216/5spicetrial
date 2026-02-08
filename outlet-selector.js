@@ -28,7 +28,7 @@
     // Ellipse radii: tall for mobile, wider for desktop
     const rect = orbitEl.getBoundingClientRect();
     // Auto expand orbit when outlet count increases
-    const scale = Math.min(1.10, 0.90 + (n * 0.02)); 
+    const scale = Math.min(1.05, 0.92 + (n * 0.01));
     // examples:
     // 8 outlets  → ~1.06
     // 12 outlets → ~1.14 (capped at 1.10)
@@ -36,10 +36,7 @@
     const rx = rect.width * 0.40 * scale;
     const ry = rect.height * 0.40 * scale;
 
-    // ✅ Pin Sakinaka at TOP always, and keep equal spacing for all
-    const pinnedId = "sakinaka";
-    const pinnedAngle = -90;
-    const step = 360 / n;
+    
 
     // helper: create + place one pill at an angle
     function placeOutlet(o, angleDeg) {
@@ -61,17 +58,15 @@
      btn.addEventListener("click", () => setSelected(o.id));
 
     orbitEl.appendChild(btn);
-    }
+    } 
 
-    // 1) place pinned outlet at top (stable)
-    const pinned = outlets.find(o => o.id === pinnedId) || null;
-    if (pinned) placeOutlet(pinned, pinnedAngle);
+    // ✅ Equal spacing for ALL outlets (no fixed rule)
+    const step = 360 / n;
+    const startAngle = -90 + 18;  // fixed rotation in degrees
 
-    // 2) place others evenly in remaining slots (same gap both sides)
-    const others = outlets.filter(o => o.id !== pinnedId);
-    others.forEach((o, i) => {
-    placeOutlet(o, pinnedAngle + step * (i + 1));
-    });
+    outlets.forEach((o, i) => {
+   placeOutlet(o, startAngle + step * i);
+  });
   }
 
   // -----------------------------
