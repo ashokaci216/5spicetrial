@@ -218,9 +218,10 @@ body{
 
 @media (max-width: 420px){
   :root{
-    --pillH: 40px;      /* a touch tighter */
+    --pillH: 40px;
     --pillPadX: 14px;
-    --orbitW: 86vw;
-    --orbitH: 68vh;
+
+    --orbitW: 92vw;   /* ⬅️ reduce side empty gap */
+    --orbitH: 56vh;   /* ⬅️ stop bottom touching the button */
   }
 }
