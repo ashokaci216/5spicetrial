@@ -52,7 +52,7 @@
      btn.setAttribute("data-id", o.id);
 
     btn.innerHTML = `<span class="dot" aria-hidden="true"></span><span>${o.name}</span>`;
-    btn.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+    btn.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) translate(var(--nx), var(--ny))`;
 
      if (o.id === selectedId) btn.classList.add("selected");
      btn.addEventListener("click", () => setSelected(o.id));
@@ -136,3 +136,6 @@
   loadExistingSelection();
   renderOrbit();
 })();
+
+
+

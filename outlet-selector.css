@@ -118,7 +118,11 @@ body{
   border: 1px solid rgba(255, 160, 70, 0.38);
   background: rgba(10, 12, 16, 0.55);
   backdrop-filter: blur(6px);
-
+  
+   /* ✅ Mobile nudge support (default = no move) */
+  --nx: 0px;   /* nudge X */
+  --ny: 0px;   /* nudge Y */
+  
   color: rgba(255,255,255,0.92);
   font-size: 14px;
   letter-spacing: 0.2px;
@@ -225,3 +229,15 @@ body{
     --orbitH: 56vh;   /* ⬅️ stop bottom touching the button */
   }
 }
+
+/* ✅ Fix touching outlets on mobile */
+@media (max-width: 420px){
+  /* Top pair */
+  .pill[data-id="vashi"]{ --nx: -10px; }
+  .pill[data-id="sakinaka"]{ --nx: 10px; }
+
+  /* Bottom pair */
+  .pill[data-id="kharghar"]{ --nx: -10px; }
+  .pill[data-id="thane"]{ --nx: 10px; }
+}
+
