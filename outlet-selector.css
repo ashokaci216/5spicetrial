@@ -100,10 +100,24 @@ body{
   pointer-events:none;
 }
 .brand-logo{
-  width: 120px;
-  height:auto;
+  width: 140px;
+  height: auto;
   filter: drop-shadow(0 10px 24px rgba(0,0,0,0.5));
-  user-select:none;
+  user-select: none;
+}
+
+/* Large phones / small tablets */
+@media (max-width: 420px){
+  .brand-logo{
+    width: 135px;
+  }
+}
+
+/* Small phones (5.5" class) */
+@media (max-width: 360px){
+  .brand-logo{
+    width: 125px;
+  }
 }
 
 /* Outlet pill button */
@@ -240,4 +254,21 @@ body{
   .pill[data-id="kharghar"]{ --nx: -10px; }
   .pill[data-id="thane"]{ --nx: 10px; }
 }
+
+/* ✅ Extra safety for small phones (5.5 inch class) */
+@media (max-width: 360px){
+  :root{
+    --pillH: 38px;
+    --pillPadX: 12px;
+    --orbitH: 54vh;
+  }
+
+  /* slightly stronger nudge only on very small screens */
+  .pill[data-id="vashi"]{ --nx: -14px; }
+  .pill[data-id="sakinaka"]{ --nx: 14px; }
+
+  .pill[data-id="kharghar"]{ --nx: -14px; }
+  .pill[data-id="thane"]{ --nx: 14px; }
+}
+
 
